@@ -59,4 +59,3 @@ def test_longest_run_recursive_hard():
     [6 12] [12 12] [12 6] [6 6]
     """
     assert to_value(longest_run_recursive([6, 12, 12, 12, 12, 6, 6, 6], 12)) == 4
-

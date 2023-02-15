@@ -5,8 +5,12 @@ See assignment-01.pdf for details.
 # no imports needed.
 
 def foo(x):
-    ### TODO
-    pass
+  if x <= 1:
+    return x
+  else:
+    ra = foo(x-1)
+    rb = foo(x-2)
+    return ra + rb
 
 def longest_run(mylist, key):
     ### TODO
@@ -35,3 +39,8 @@ def test_longest_run():
     assert longest_run([2,12,12,8,12,12,12,0,12,1], 12) == 3
 
 
+print(foo(9))
+print(foo(11))
+print(foo(14))
+print(foo(2))
+print(foo(3))
