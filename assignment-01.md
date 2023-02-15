@@ -2,7 +2,7 @@
 
 # CMPS 2200 Assignment 1
 
-**Name:**_________________________
+**Name:** Tyler Simms
 
 
 In this assignment, you will learn more about asymptotic notation, parallelism, functional languages, and algorithmic cost models. As in the recitation, some of your answer will go here and some will go in `main.py`. You are welcome to edit this `assignment-01.md` file directly, or print and fill in by hand. If you do the latter, please scan to a file `assignment-01.pdf` and push to your github repository. 
@@ -62,7 +62,13 @@ $$
 
   - 2b. (6 pts) What does this function do, in your own words?  
   
-This function takes one argument, named x. Foo then checks whether x is less than or equal to 1 using an if statement. If the condition is true, x is returned. If the condition is false, an else statement is executed. The else statement's code block creates two local variables, ra and rb. ra is assigned a recursive call of foo with the argument x-1. rb is assigned a recursive call of foo with the argument x-2. The sum of ra and rb is returned and the function ends. The function's purpose is to ultimately return the number in the Fibonacci sequence that corresponds with the index given as the argument x, assuming the indexes begin at 0 instead of 1. For example, entering 10 as x will make foo return 55 because 55 is the number in the Fibonacci sequence at index 10, making sure to remember that the indexes begin at 0.
+This function takes one argument, named x. Foo then checks whether x is less than or equal to 1 using an if statement.
+If the condition is true, x is returned. If the condition is false, an else statement is executed. The else statement's
+code block creates two local variables, ra and rb. ra is assigned a recursive call of foo with the argument x-1. rb is
+assigned a recursive call of foo with the argument x-2. The sum of ra and rb is returned and the function ends. The
+function's purpose is to ultimately return the number in the Fibonacci sequence that corresponds with the index given as
+the argument x, assuming the indexes begin at 0 instead of 1. For example, entering 10 as x will make foo return 55 because
+55 is the number in the Fibonacci sequence at index 10, making sure to remember that the indexes begin at 0.
 
 .  
 .  
