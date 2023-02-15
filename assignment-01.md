@@ -25,13 +25,13 @@ In this assignment, you will learn more about asymptotic notation, parallelism, 
 .  
   - 1c. Is $n^{1.01} \in O(\mathrm{log}^2 n)$?    
 .  
-.  $n^{1.01} \in O(\mathrm{log}^2 n)$ is false. n^{1.01} is almost linear. Once n is equal to 15, n^{1.01} is larger than \mathrm{log}^2 n, using base 2 for the log. No value for c in $n^{1.01} <= \mathrm{log}^2 n can make up the difference when n is significantly large.
+.  $n^{1.01} \in O(\mathrm{log}^2 n)$ is false. n^{1.01} is almost linear. Once n is equal to 15, n^{1.01} is larger than \mathrm{log}^2 n, using base 2 for the log. No value for c in $n^{1.01} <= c * \mathrm{log}^2 n can make up the difference when n is significantly large.
 .  
 .  
 
   - 1d. Is $n^{1.01} \in \Omega(\mathrm{log}^2 n)$?  
 .  
-.  $n^{1.01} \in \Omega(\mathrm{log}^2 n)$ is true. n^{1.01} is almost linear. Once n is equal to 15, n^{1.01} is larger than \mathrm{log}^2 n, using base 2 for the log. No value for c in $n^{1.01} >= \mathrm{log}^2 n can make the expression false when n is significantly large.
+.  $n^{1.01} \in \Omega(\mathrm{log}^2 n)$ is true. n^{1.01} is almost linear. Once n is equal to 15, n^{1.01} is larger than \mathrm{log}^2 n, using base 2 for the log. No value for c in $n^{1.01} >= c * \mathrm{log}^2 n can make the expression false when n is significantly large.
 .  
 .  
   - 1e. Is $\sqrt{n} \in O((\mathrm{log} n)^3)$?  
