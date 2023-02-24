@@ -13,9 +13,18 @@ def foo(x):
     return ra + rb
 
 def longest_run(mylist, key):
-    ### TODO
-    pass
-
+  longest = 0
+  counter = 0
+  for x in mylist:
+    if x == key:
+      counter += 1
+    else:
+      if counter > longest:
+        longest = counter
+      counter = 0
+  if counter > longest:
+    longest = counter
+  return longest
 
 class Result:
     """ done """
@@ -31,16 +40,50 @@ class Result:
     
     
 def longest_run_recursive(mylist, key):
-    ### TODO
-    pass
+  if len(mylist) == 1:
+    if mylist[0]  == key:
+      result = Result(0, 0, 1, True)
+      return result
+    else:
+      result = Result(0, 0, 0, False)
+      return result
+
+  middle = len(mylist) // 2
+  left_result = longest_run_recursive(mylist[:middle], key)
+  right_result = longest_run_recursive(mylist[middle:], key)
+
+  totalCount = 0
+  leftCount = 0
+  rightCount = 0
+  for x in range(0, middle):
+    if mylist[x] == key:
+      leftCount += 1
+    else:
+      leftCount = 0
+  for x in range(middle, len(mylist)):
+    if mylist[x] == key:
+      rightCount += 1
+    else:
+      break
+
+  totalCount = leftCount + rightCount
+
+  totalLongest = max(totalCount, left_result.longest_size, right_result.longest_size)
+
+  result = Result(left_result.longest_size, right_result.longest_size, totalLongest, False)
+  return result
 
 ## Feel free to add your own tests here.
 def test_longest_run():
     assert longest_run([2,12,12,8,12,12,12,0,12,1], 12) == 3
 
-
-print(foo(9))
-print(foo(11))
-print(foo(14))
-print(foo(2))
-print(foo(3))
+def to_value(v):
+    """
+    if it is a Result object, return longest_size.
+    else return v
+    """
+    if type(v) == Result:
+        return v.longest_size
+    else:
+        return int(v)
+print(to_value(longest_run_recursive([6, 12, 12, 12, 12, 6, 6, 6], 12)))
